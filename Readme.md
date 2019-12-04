@@ -268,7 +268,7 @@ $ for file in ./*; do cp $file /Users/$USER/Desktop; done;
 Next, go to the desktop directory via the terminal. Encode the `'<PEM-FILE>.pem'` file as base64:
 
 ```
-$ base64 <PEM-FILE>.pem
+$ cat ca-hou02-mycluster.pem | base64 -w0
 ```
 
 Copy the result and open the `'<KUBE-CONFIG>.yml'` file with a code editor. Find `'certificate-authority: <PEM-FILE>.pem'` and change it to `'certificate-authority-data: <BASE64-RESULT>'`.
